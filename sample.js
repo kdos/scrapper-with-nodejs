@@ -4,22 +4,25 @@ var fs = require('fs');
 var request = require('request');
 var cheerio = require('cheerio');
 
-var buf = "";
-var count = 0;/*
-    fs.readdir(process.argv[2], function (error, list) {  
-        buf = print(list);
-        console.log(count);
-    });
+/*
+	var buf = "";
+	var count = 0;
+	    fs.readdir(process.argv[2], function (error, list) {  
+	        buf = print(list);
+	        console.log(count);
+	    });
 
-function print(list){
-	
-for(i in list){
-	var ext = path.extname(list[i]);
-	if(ext == "."+process.argv[3])count++;
-	console.log(ext);
-}
+	function print(list){
+		
+	for(i in list){
+		var ext = path.extname(list[i]);
+		if(ext == "."+process.argv[3])count++;
+		console.log(ext);
+	}
 
 */
+
+var URL = "http://www.getyourguide.com/s/?q=bangkok";
 request('http://getithaka.com/', function (error, response, body) {
   if (!error && response.statusCode == 200) {
     		var $ = cheerio.load(body);
